@@ -1,0 +1,91 @@
+{% extends 'gate/base.html' %}
+{% load static %}
+
+
+{% block title %} index {% endblock title %}
+
+{% block body %}
+
+
+
+
+<section class="home" style="background-color:transparent ;">
+
+
+
+
+  <div class="row" style="margin-top:40px ;">
+
+
+    <div class="col-md-12">
+      <h1 style="text-align: center; color: white;">Visitors </h1>
+    </div>
+  </div>
+
+  <div class="row">
+
+
+
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+
+      <form action="" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label class="form-label">Sr. NO</label>
+          <input type="text" class="form-control visitname" placeholder="Enter Name" name="Sr" id="Sr" value="{{tempid}}" readonly>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Vehicle NO #</label>
+          <input type="text" class="form-control visitname" placeholder="vvno" id="cnic" name="vvno" value="{{tempvno}}"
+            readonly>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Out Reading</label>
+          <input type="text" class="form-control visitname" placeholder="ooutreading" name="ooutreading" id="purpose" value="{{tempoutr}}"
+            readonly>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Inn Reading</label>
+          <input type="number" class="form-control visitname" placeholder="Enter Vehicle Current Reading" name="innreading" id="innreading"
+            required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Inn Date</label>
+          <input type="date" class="form-control visitname" placeholder="Enter Vehicle in Date" name="inndate" id="inndate"
+            required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Inn Time</label>
+          <input type="time" class="form-control visitname" placeholder="Enter Vehicle in Time" name="inntime" id="inntime"
+            required>
+        </div>
+        <input type="text" name="accepted" id="accepted" value="accepted" hidden>
+        <button style="margin-bottom: 30px;" type="submit" class="btn visitbtn">Submit</button>
+      </form>
+
+
+
+
+
+
+
+    </div>
+    <div class="col-md-3"></div>
+
+  </div>
+
+
+</section>
+
+
+
+
+
+
+
+{% endblock body %}

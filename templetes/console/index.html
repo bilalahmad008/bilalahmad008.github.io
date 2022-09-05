@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>CUI transport portal - Sahiwal</title>
+
+<meta name="description" content="Source code generated using layoutit.com">
+<meta name="author" content="LayoutIt!">
+<link href="{% static 'console/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'console/style.css' %}" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+
+<header>
+<div class="row row1">
+<div class="col-md-12">
+<div class="center_aligned">
+    
+<div class="logo_box">
+<img class="main_logo" src="{% static 'console/images/logo.png' %}" title="COMSATS UNIVERSITY ISLAMABAD" alt="COMSATS UNIVERSITY ISLAMABAD" />
+<img class="desktop_hide main_logo_text" src="{% static 'console/images/logotext.png' %}" title="COMSATS UNIVERSITY ISLAMABAD" alt="COMSATS UNIVERSITY ISLAMABAD" />
+<img class="desktop_hide sub_logo_text" src="{% static 'console/images/ctms.png' %}"   />
+</div>
+<div class="logo_text1 mobile_hide"><img src="{% static 'console/images/logotext.png' %}" title="COMSATS UNIVERSITY ISLAMABAD" alt="COMSATS UNIVERSITY ISLAMABAD" /></div>
+<div class="logo_text2 mobile_hide"><img src="{% static 'console/images/ctms.png' %}"   /></div>
+</div>
+
+</div>
+</div>
+</header>
+
+<section>
+<div class="row row2">
+<div class="center_aligned">
+<div class="col-md-3"></div>
+<div class="col-md-9"  ><h1>The Transport Portal</h1></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="row row3">
+<div class="center_aligned">
+
+    <div class="col-md-3 left_container">
+        <h2>Sahiwal Campus</h2>
+        <ul>
+        <li><img src="{% static 'console/images/1.png' %}"></li>
+        <li><img src="{% static 'console/images/2.png' %}"></li>
+        <li><img src="{% static 'console/images/3.png' %}"></li>
+        <li><img src="{% static 'console/images/4.png' %}"></li>
+        <li><img src="{% static 'console/images/5.png' %}"></li>
+        <li><img src="{% static 'console/images/6.png' %}"></li>
+        </ul>
+        
+        </div>
+
+<div class="col-md-6 center_container">
+<ul class="ul2">
+<!-- <li class="li2"><a class="aa" href="https://swl-cms.comsats.edu.pk:8082/"></a></li>
+<li class="li2"><a class="bb" href="https://faculty.comsats.edu.pk/Home/login?returnUrl=https://faculty.comsats.edu.pk/"></a></li> -->
+<li class="li2"><a class="ee" href="/8082\"></a></li>
+<li class="li2"><a class="ff" href="/8080\"></a></li>
+<li class="li2"><a class="fff" href="/8084\"></a></li>
+ <!-- <li class="li2"><a class="dd" href="https://swl-cms.comsats.edu.pk:8097/"></a></li>
+<li class="li2"><a class="cc" href="https://swl-cms.comsats.edu.pk:8096/"></a></li>
+<li class="li2"><a class="kk" href="https://swl-cms.comsats.edu.pk:8098/"></a></li>  -->
+</ul>
+
+<h2>CTMS Introduction</h2>
+<p>CTMS Principal Seat is responsible to automate all major COMSATS University processes under one umbrella as per rules regulations and policies of COMSATS University. It provides pure "Web Based" anytime/anywhere access to the administrative, transactional and Transport process needed to manage day to day affairs of COMSATS University.</p>
+
+<div class="exlplore_sites">
+<h3>Explore Websites</h3> 
+<ul>
+<li><a href="https://www.comsats.edu.pk">www.comsats.edu.pk</a></li>
+<li><a href="http://cuonline.comsats.edu.pk">cuonline.comsats.edu.pk</a></li>
+<li><a href="https://admissions.comsats.edu.pk/">admissions.comsats.edu.pk</a></li>
+</ul>
+</div>
+</div>
+
+<div class="col-md-3 right_container">
+<img src="{% static 'console/images/rightimage.png' %}" width="242" height="243">
+<h2>Sahiwal Campus</h2>
+<p>The COMSATS University Islamabad (CUI), which received its Charter from the Federal Government in August 2000, as a Degree Awarding Institute (DAI) in the public sector. The CU is up gradated as university by the name of "Comsats University" through an act of the Parliament in April 2018.</p> 
+</div>
+
+</div>
+</div>
+</section>
+
+
+<footer>
+<div class="row row4">
+<div class="col-md-12">
+<div class="center_aligned">
+<p>Copyright © 2018, All Rights Reserved by CTMS-COMSATS-Sahiwal</p>
+<p>View Road, Comsats University Islamabad (Sahiwal Campus), Sahiwal 57000, Pakistan</p>
+
+</div>
+
+</div>
+</div>
+</footer>
+
+
+</div>
+
+
+
+
+
+
+
+
+         <!-- Alerts links -->
+         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+         <!--JQuery CDN-->
+         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+         <!--Sweet Alert CDN-->
+         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+       
+              <script>
+        
+       
+               $('.delete').on('click',function (e) {
+                     e.preventDefault();
+                     var self = $(this);
+                     console.log(self.data('title'));
+                     Swal.fire({
+                         title: 'Are you sure?',
+                         text: "You won't be able to revert this!",
+                         icon: 'warning',
+                         showCancelButton: true,
+                         confirmButtonColor: '#3085d6',
+                         cancelButtonColor: '#d33',
+                         confirmButtonText: 'Yes, delete it!'
+                     }).then((result) => {
+                         if (result.isConfirmed) {
+                             Swal.fire(
+                                 'Deleted!',
+                                 'Your file has been deleted.',
+                                 'success'
+                             )
+                           location.href = self.attr('href');
+                         }
+                         else {
+                 swal.fire("Your imaginary file is safe!");
+               }
+                     })
+             
+                 })
+       
+       
+       
+                 $('.logout').on('click',function (e) {
+               e.preventDefault();
+               var self = $(this);
+               console.log(self.data('title'));
+               Swal.fire({
+                   title: 'Logout?',
+                   text: "Are you sure you want to logout?",
+                   icon: 'warning',
+                   showCancelButton: true,
+                   confirmButtonColor: '#d33',
+                   cancelButtonColor: '#3085d6', 
+                   confirmButtonText: 'Yes, Logout'
+               }).then((result) => {
+                   if (result.isConfirmed) {
+                       // Swal.fire(
+                       //     // 'Deleted!',
+                       //     // 'Your file has been deleted.',
+                       //     // 'success'
+                       // )
+                     location.href = self.attr('href');
+                   }
+                   
+               })
+       
+           })
+       
+       
+       
+             
+                 {% for msg in messages %}
+                 swal.fire('{{msg}}',Swal.fire(
+                   'Your file has been deleted.',
+                   'success'
+               ));
+                 {% endfor %}
+             </script>
+       
+       
+       
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="{% static 'console/js/jquery.min.js' %}"></script>
+<script src="{% static 'console/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'console/js/scripts.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,623 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block body %}
+
+<div id="wrapper">
+    <div class="main-content">
+        <div class="row small-spacing">
+            <div class="col-xs-12">
+
+
+
+
+
+
+                <div class="box-content">
+					<h4 class="box-title">Enter The Employee Data</h4>
+					<!-- /.box-title -->
+		
+					<form id="commentForm" action="#" method="post" novalidate="novalidate">
+						{% csrf_token %}
+						<div id="tabsleft" class="tabbable tabs-left">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#tabsleft-tab1" data-toggle="tab" aria-expanded="true">Personal </a></li>
+								<li class=""><a href="#tabsleft-tab2" data-toggle="tab" aria-expanded="false">Education </a></li>
+								<li class=""><a href="#tabsleft-tab3" data-toggle="tab" aria-expanded="false">Emergency </a></li>
+								<li class=""><a href="#tabsleft-tab4" data-toggle="tab" aria-expanded="false">Medical </a></li>
+								<li class=""><a href="#tabsleft-tab5" data-toggle="tab" aria-expanded="false">Courses </a></li>
+								<li class=""><a href="#tabsleft-tab6" data-toggle="tab" aria-expanded="false">Expirence </a></li>
+								<li class=""><a href="#tabsleft-tab7" data-toggle="tab" aria-expanded="false">Job </a></li>
+							</ul>
+							<div class="tab-content">
+							
+
+								<!-- personal Details -->
+
+								<div class="tab-pane active" id="tabsleft-tab1">
+
+							<!-- row 1 -->
+							<div class="row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Registration ID</label>
+                                    <div class="controls">
+                                        <input type="text" id="emp_id" name="emp_id" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Employee Name</label>
+                                    <div class="controls">
+                                        <input type="text" id="name" name="name" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+								<!-- row 2 -->
+								<div class="row">
+
+									<div class="form-group col-md-6">
+										<label for="namefield">Father Name</label>
+										<div class="controls">
+											<input type="text" id="fname" name="fname" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+										</div>
+									</div>
+
+									<div class="form-group col-md-6">
+										<label for="namefield">Gender</label>
+										<div class="controls">
+											<select class="required form-control valid" aria-required="true" aria-invalid="false" name="gender" id="gender">
+												<option value="">Select</option>
+												<option value="Male">Male</option>
+												<option value="Female">Female</option>
+											</select>
+										</div>
+									</div>
+	
+	
+								</div>
+
+
+							<!-- row 3 -->
+							<div class="row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">CNIC</label>
+                                    <div class="controls">
+                                        <input type="text" id="cnic" name="cnic" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Phone Number</label>
+                                    <div class="controls">
+                                        <input type="text" id="ph1" name="ph1" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+							<!-- row 4 -->
+							<div class="row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Mobile Number</label>
+                                    <div class="controls">
+                                        <input type="text" id="ph2" name="ph2" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Email</label>
+                                    <div class="controls">
+                                        <input type="email" id="email" name="email" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+							<!-- row 5 -->
+							<div class="row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Date Of Birth</label>
+                                    <div class="controls">
+										<input  type="date" id="dob" name="dob"  class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">City</label>
+                                    <div class="controls">
+                                        <input type="text" id="city" name="city" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+							<!-- row 6 -->
+							<div class="row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Address</label>
+                                    <div class="controls">
+                                        <input type="text" id="adress" name="adress" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Postal Code</label>
+                                    <div class="controls">
+                                        <input type="text" id="postal_code" name="postal_code" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+							<!-- row 7 -->
+							<div class="row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Martial Status</label>
+                                    <div class="controls">
+                                        <input type="text" id="marital_status" name="marital_status" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                               
+               <div class="col-md-6">
+                <label for="designation">Designation</label>
+                <select class="required form-control valid" aria-required="true" aria-invalid="false" name="designation" id="designation">
+                  <option value=""> Select Designation</option>
+                  <option value="Driver">Driver</option>
+                  <option value="Conductor">Conductor</option>
+                  <option value="Worker">Worker</option>
+                  <option value="Mechanic">Mechanic</option>
+                  <option value="Employee">Employee</option>
+                </select>
+             </div>
+
+                            </div>
+
+							<div class="row">
+								<div class="form-group col-md-6">
+                                    <label for="namefield">Picture</label>
+                                    <div class="controls">
+                                        <input type="file" id="image" name="image" accept="image/png, image/jpeg" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+							</div>
+
+								</div>
+
+
+
+								<!-- educational details -->
+
+								<div class="tab-pane" id="tabsleft-tab2">
+                            <!-- row 1 -->
+							<div class="row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Tittle</label>
+                                    <div class="controls">
+                                        <input type="text" id="title_education" name="title_education" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Institute</label>
+                                    <div class="controls">
+                                        <input type="text" id="institute_education" name="institute_education" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+							 <!-- row 2 -->
+							 <div class="row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Board</label>
+                                    <div class="controls">
+                                        <input type="text" id="board_education" name="board_education" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Total Marks</label>
+                                    <div class="controls">
+                                        <input type="text" id="t_marks_education" name="t_marks_education" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+							 <!-- row 3 -->
+							 <div class="row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Obtain Marks</label>
+                                    <div class="controls">
+                                        <input type="text" id="o_marks_education" name="o_marks_education" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Year Of Passing</label>
+                                    <div class="controls">
+                                        <input type="text" id="year_of_passing_education" name="year_of_passing_education" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+							 <!-- row 4 -->
+							 <div class="row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Percentage</label>
+                                    <div class="controls">
+                                        <input type="text" id="persentage_education" name="persentage_education" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+								</div>
+
+
+
+
+								<!-- emergency Detail -->
+
+								<div class="tab-pane" id="tabsleft-tab3">
+							<!-- row 1 -->
+							<div class="row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Name</label>
+                                    <div class="controls">
+                                        <input type="text" id="name_emergency" name="name_emergency" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Relation</label>
+                                    <div class="controls">
+                                        <input type="text" id="relation_emergency" name="relation_emergency" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+							<!-- row 2 -->
+							<div class="row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Phone Number</label>
+                                    <div class="controls">
+                                        <input type="text" id="ph1_emergency" name="ph1_emergency" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+								<div class="form-group col-md-6">
+                                    <label for="namefield">Mobile Number</label>
+                                    <div class="controls">
+                                        <input type="text" id="ph2_emergency" name="ph2_emergency" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+							<!-- row 3 -->
+							<div class="row">
+								
+								<div class="form-group col-md-6">
+									<label for="namefield">Email</label>
+									<div class="controls">
+										<input type="email" class="form-control" name="email_emergency" id="email_emergency" placeholder="Email" data-error="Mr., that email address is invalid" required="">
+									</div>
+								</div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">City</label>
+                                    <div class="controls">
+                                        <input type="text" id="city_emergency" name="city_emergency" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+							<!-- row 4 -->
+							<div class="row">
+								
+                                <div class="form-group col-md-6">
+                                    <label for="namefield">Address</label>
+                                    <div class="controls">
+                                        <input type="text" id="adress_emergency" name="adress_emergency" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+		
+								</div>
+
+
+								<!-- Medical Detail -->
+
+								<div class="tab-pane" id="tabsleft-tab4">
+									<!-- row 1 -->
+									<div class="row">
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Blood Group</label>
+											<div class="controls">
+												<select class="required form-control valid" aria-required="true" aria-invalid="false" name="blood_medical" id="blood_medical">
+													<option value="">Select</option>
+													<option value="A+">A+</option>
+													<option value="A-">B-</option>
+													<option value="A-">B+</option>
+													<option value="A-">O-</option>
+													<option value="A-">O+</option>
+												</select>
+											</div>
+										</div>
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Organ Donor</label>
+										<div class="controls">
+											<select class="required form-control valid" aria-required="true" aria-invalid="false" name="organ_doner_medical" id="organ_doner_medical">
+												<option value="">Select</option>
+												<option value="yes">Yes</option>
+												<option value="no">No</option>
+											</select>
+										</div>
+										</div>
+		
+									</div>
+		
+		
+									<!-- row 2 -->
+									<div class="row">
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Desability</label>
+										<div class="controls">
+											<select class="required form-control valid" aria-required="true" aria-invalid="false" name="disability_medical" id="disability_medical">
+												<option value="">Select</option>
+												<option value="yes">Yes</option>
+												<option value="no">No</option>
+											</select>
+										</div>
+										</div>
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Fitness</label>
+											<div class="controls">
+												<input type="text" id="fitness_medical" name="fitness_medical" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+											</div>
+										</div>
+		
+									</div>
+		
+									
+		
+				
+										</div>
+
+
+
+								<!-- Courses -->
+								<div class="tab-pane" id="tabsleft-tab5">
+									<!-- row 1 -->
+									<div class="row">
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Tittle</label>
+											<div class="controls">
+												<input type="text" id="title_courses" name="title_courses" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+											</div>
+										</div>
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Institute</label>
+											<div class="controls">
+												<input type="text" id="institute_courses" name="institute_courses" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+											</div>
+										</div>
+		
+									</div>
+		
+		
+									<!-- row 2 -->
+									<div class="row">
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Duration</label>
+											<div class="controls">
+												<input type="text" id="Duration_courses" name="Duration_courses" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+											</div>
+										</div>
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Date Of Completion</label>
+											<div class="controls">
+												<input  type="date" id="date_of_complition_courses" name="date_of_complition_courses"  class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+											</div>
+										</div>
+		
+									</div>
+		
+									<!-- row 3 -->
+									<div class="row">
+										
+										<div class="form-group col-md-6">
+											<label for="namefield">Certificate</label>
+											<div class="controls">
+												<select class="required form-control valid" aria-required="true" aria-invalid="false" name="certificate_courses" id="certificate_courses">
+													<option value="">Select</option>
+													<option value="yes">Yes</option>
+													<option value="no">No</option>
+												</select>
+											</div>
+										</div>
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Number of Project</label>
+											<div class="controls">
+												<input type="text" id="no_of_project_courses" name="no_of_project_courses" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+											</div>
+										</div>
+		
+		
+									</div>
+		
+				
+										</div>
+
+
+
+								<!-- Expirence -->
+								<div class="tab-pane" id="tabsleft-tab6">
+									<!-- row 1 -->
+									<div class="row">
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Organization</label>
+											<div class="controls">
+												<input type="text" id="organization_expirence" name="organization_expirence" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+											</div>
+										</div>
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Designation</label>
+											<div class="controls">
+												<input type="text" id="Designation_expirence" name="Designation_expirence" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+											</div>
+										</div>
+		
+									</div>
+		
+		
+									<!-- row 2 -->
+									<div class="row">
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Address</label>
+											<div class="controls">
+												<input type="text" id="adress_expirence" name="adress_expirence" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+											</div>
+										</div>
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Joining Date</label>
+											<div class="controls">
+												<input  type="date" id="joining_date_expirence" name="joining_date_expirence"  class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+											</div>
+										</div>
+		
+									</div>
+		
+									<!-- row 3 -->
+									<div class="row">
+										
+										<div class="form-group col-md-6">
+											<label for="namefield">Leaving Date</label>
+											<div class="controls">
+												<input  type="date" id="leaving_date_expirence" name="leaving_date_expirence"  class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+											</div>
+										</div>
+		
+		
+									</div>
+		
+				
+										</div>
+
+
+								<!-- Job details -->
+								<div class="tab-pane" id="tabsleft-tab7">
+									<!-- row 1 -->
+									<div class="row">
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Designation</label>
+											<div class="controls">
+												<input type="text" id="Designation_job" name="Designation_job" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+											</div>
+										</div>
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Duty Hours</label>
+											<div class="controls">
+												<input type="number" id="duty_time_job" name="duty_time_job" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+											</div>
+										</div>
+		
+									</div>
+		
+		
+									<!-- row 2 -->
+									<div class="row">
+		
+										<div class="form-group col-md-6">
+											<label for="namefield">Job Description</label>
+											<div class="controls">
+												<input type="text" id="job_description_job" name="job_description_job" class="required form-control valid" aria-required="true" aria-invalid="false"><label id="namefield-error" class="error" for="namefield" style="display: none;"></label>
+											</div>
+										</div>
+
+										<div class="form-group col-md-3">
+											<button  type="submit" class="btn btn-primary form-control" style="margin-top: 30px;" >Submit</button>
+										</div>
+		
+		
+									</div>
+		
+
+		
+				
+										</div>
+
+
+
+
+								<ul class="pager wizard">
+									<li class="previous first disabled"><a href="javascript:;">First</a></li>
+									<li class="previous disabled"><a href="javascript:;">Previous</a></li>
+									<li class="next last"><a href="javascript:;">Last</a></li>
+									<li class="next"><a href="javascript:;">Next</a></li>
+									<li class="next finish hidden" style="display:none;"><a href="javascript:;">Finish</a></li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</div>
+
+
+
+
+
+
+
+				
+
+
+<!-- </div> -->                    
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

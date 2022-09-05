@@ -1,0 +1,210 @@
+{% extends 'home/reportbase.html' %}
+{% load static %}
+{% block body %}
+   
+
+
+<div id="wrapper">
+    <div class="main-content">
+        <div class="row small-spacing">
+            <div class="col-xs-12">
+
+
+
+    
+    <div class="container-fluid" style="background-color: rgb(255, 255, 255);">
+    
+        <div class="col-sm-3">
+      
+            <h4 class="text-center alert" style="background-color: #304FFE; color: white;"> Add Stop </h4>
+           
+
+            <form method="post" >
+
+              {% csrf_token %}
+              <div class="col-md-12">
+                <label for="sec" class="form-label">Select City</label>
+                <select class="form-control col-md-4" name="city" aria-label="Default select example" onChange="form.submit();" required>
+                  <option  data-display="Select">{{city}}</option>
+                  
+                  {% for i in allcity %}
+                  <option value="{{i.name}}" >{{i.name}}</option>
+                  {% endfor %}
+                  
+                  </select>
+             </div>
+    
+  
+  
+             <div class="col-md-12">
+              <label for="sec" class="form-label">Select Route</label>
+              <select class="form-control col-md-4" name="route" id="route" required>
+                <option selected>{{idnt}}</option>
+                  
+                {% for i in route %}
+                <option value="{{i.name}}">{{i.name}}</option>
+                {% endfor %}
+              </select>
+           </div>
+
+
+
+           <div class="col-md-12">
+            <label for="V_no">Add stop</label>
+            <input type="text" class="form-control" id="stop"name="stop" placeholder="Add stop"  required>
+          </div>
+
+
+          
+          <!-- <input type="submit" name="formodel"  {% if flag == 1 %}value="done" {% endif %}> -->
+          
+
+          <div class="col-md-8"><br><button type="submit"  value="submit" class="btn btn-primary form-control" style="margin-top: 10px;">Submit</button></div> 
+  
+    
+    </div>
+    
+    
+          
+    <div class="col-sm-9 mx-1">
+        <h4 class="text-center alert" style="background-color: #304FFE; color: white;"> Show Employee Information </h4>
+      
+      
+      
+      <table id="example" class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Route</th>
+            <th scope="col">Stop</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Run a for loop here and iterate through all the index -->
+          
+          
+          {% for employee in allstops %}
+          <tr>
+            <td class="table-secondary">{{forloop.counter}}</td>
+            <td class="table-secondary">{{employee.route}}</td>
+            <td class="table-secondary">{{employee.name}}</td>
+
+     
+          </tr>
+          {% endfor %}
+
+          
+      
+        </tbody>
+      
+       
+      </table>
+      
+      
+      
+      </div>
+    
+    
+    
+    </div>
+
+    
+        
+    
+
+
+
+
+<!-- div -->
+         </div>
+        </div>
+        </div>
+        </div>
+        
+
+ 
+
+
+         <!-- Alerts links -->
+         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+         <!--JQuery CDN-->
+         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+         <!--Sweet Alert CDN-->
+         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+       
+              <script>
+        
+       
+               $('.delete').on('click',function (e) {
+                     e.preventDefault();
+                     var self = $(this);
+                     console.log(self.data('title'));
+                     Swal.fire({
+                         title: 'Are you sure?',
+                         text: "You won't be able to revert this!",
+                         icon: 'warning',
+                         showCancelButton: true,
+                         confirmButtonColor: '#3085d6',
+                         cancelButtonColor: '#d33',
+                         confirmButtonText: 'Yes, delete it!'
+                     }).then((result) => {
+                         if (result.isConfirmed) {
+                             Swal.fire(
+                                 'Deleted!',
+                                 'Your file has been deleted.',
+                                 'success'
+                             )
+                           location.href = self.attr('href');
+                         }
+                         else {
+                 swal.fire("Your imaginary file is safe!");
+               }
+                     })
+             
+                 })
+       
+       
+       
+                 $('.logout').on('click',function (e) {
+               e.preventDefault();
+               var self = $(this);
+               console.log(self.data('title'));
+               Swal.fire({
+                   title: 'Logout?',
+                   text: "Are you sure you want to logout?",
+                   icon: 'warning',
+                   showCancelButton: true,
+                   confirmButtonColor: '#d33',
+                   cancelButtonColor: '#3085d6', 
+                   confirmButtonText: 'Yes, Logout'
+               }).then((result) => {
+                   if (result.isConfirmed) {
+                       // Swal.fire(
+                       //     // 'Deleted!',
+                       //     // 'Your file has been deleted.',
+                       //     // 'success'
+                       // )
+                     location.href = self.attr('href');
+                   }
+                   
+               })
+       
+           })
+       
+       
+       
+             
+                 {% for msg in messages %}
+                 swal.fire('{{msg}}',Swal.fire(
+                   'Your file has been deleted.',
+                   'success'
+               ));
+                 {% endfor %}
+             </script>
+       
+       
+       
+        
+        {% endblock %}
+     

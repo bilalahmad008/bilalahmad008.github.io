@@ -1,0 +1,129 @@
+{% extends 'home/reportbase.html' %}
+{% load static %}
+{% block body %}
+
+
+<div id="wrapper">
+  <div class="main-content">
+    <div class="row small-spacing">
+      <div class="col-xs-12">
+
+        <div class="container-fluid">
+
+
+          <h4 class="text-center alert" style="background-color: #304FFE; color: white;">Fee Defaulters</h4>
+      
+      
+      
+      
+      
+
+          <table id="example" class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Reg#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Profession</th>
+                <th scope="col">City</th>
+                <th scope="col">Route</th>
+                <th scope="col">stop</th>
+                <th scope="col">ph#</th>
+                <th scope="col">Date</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Run a for loop here and iterate through all the index -->
+              
+              
+              {% for i in all_registers %}
+              <tr>
+                <td class="table-secondary">{{forloop.counter}}</td>
+                <td class="table-secondary">{{i.rigid}}</td>
+                <td class="table-secondary">{{i.name}}</td>
+                <td class="table-secondary">{{i.profession}}</td>
+                <td class="table-secondary">{{i.city}}</td>
+                <td class="table-secondary">{{i.route}}</td>
+                <td class="table-secondary">{{i.stop}}</td>
+                <td class="table-secondary">{{i.ph}}</td>
+                <td class="table-secondary">{{i.date1}}</td>
+                <td class="table-secondary">{{i.status}}</td>
+              </tr>
+              {% endfor %}
+    
+              
+          
+            </tbody>
+          
+           
+          </table>
+
+        </div>
+
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Alerts links -->
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <!--JQuery CDN-->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <!--Sweet Alert CDN-->
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+           <script>
+     
+    
+            $('.delete').on('click',function (e) {
+                  e.preventDefault();
+                  var self = $(this);
+                  console.log(self.data('title'));
+                  Swal.fire({
+                      title: 'Are you sure?',
+                      text: "You won't be able to revert this!",
+                      icon: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: 'Yes, delete it!'
+                  }).then((result) => {
+                      if (result.isConfirmed) {
+                          Swal.fire(
+                              'Deleted!',
+                              'Your file has been deleted.',
+                              'success'
+                          )
+                        location.href = self.attr('href');
+                      }
+                      else {
+              swal.fire("Your imaginary file is safe!");
+            }
+                  })
+          
+              })
+          
+              {% for msg in messages %}
+              swal.fire('{{msg}}',Swal.fire(
+                'Your file has been deleted.',
+                'success'
+            ));
+              {% endfor %}
+          </script>
+
+
+{% endblock %}

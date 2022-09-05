@@ -1,0 +1,96 @@
+{% extends 'gate/base.html' %}
+{% load static %}
+
+
+{% block title %} index {% endblock title %}
+
+{% block body %}
+
+ 
+ 
+
+<section class="home" style="background-color:transparent ;">
+
+    <div class="row" style="margin-top:40px ;">
+
+
+        <div class="col-md-12">
+           <h1 style="text-align: center; color: white;">Visitors In </h1>
+        </div>
+     </div>
+     <div class="row" style="margin-top:20px ;">
+     
+     <div class="col-md-1"></div>
+     <div class="col-md-10">
+     
+     
+        <table class="table table1 " style="color: white; ">
+           <thead>
+             <tr style="background-color:#572B77; ">
+               <th scope="col">#</th>
+               <th scope="col">Vehicle ID</th>
+               <th scope="col">	Reading</th>
+               <th scope="col">Out Date</th>
+               <th scope="col">	Out Time</th>
+               <th scope="col">Action</th>
+               
+             </tr>
+           </thead>
+           <tbody>
+            {% for data in allvehicle %}
+             <tr style="background-color:#d9b0f7;">
+              <th scope="col">{{forloop.counter}}</th>
+              <th scope="col">{{data.vmoid}}</th>
+              <th scope="col">{{data.outreading}}</th>
+              <th scope="col">{{data.outdate}}</th>
+              <th scope="col">{{data.outtime}}</th>
+               <td> <form class="row g-3" method="post" action="{%  url 'update' %}">
+                {% csrf_token %}
+                <input type="text" name="srno" id="srno" value="{{data.id}}" hidden>
+                <input type="text" name="insertdata" id="insertdata" value="accepted" hidden>
+                                    
+                 <div class="col-auto">
+                   <button type="submit" class="btn btn-primary mb-3 inntime" >INN</button>
+                 </div>
+               </form>
+              </td>
+             </tr>
+              
+             {% endfor %}
+              
+           </tbody>
+         </table>
+     
+     
+     
+     
+     
+          
+     
+     </div>
+     <div class="col-md-1"></div>
+     
+     
+     </div>
+     
+     <div class="row">
+     
+        <div class="col-md-12">
+           <br><br><br>
+           <hr style="  background-color:#572B77"></div>
+        
+        </div>
+
+
+</section>
+
+
+
+ 
+
+
+
+
+{% endblock body %}
+
+

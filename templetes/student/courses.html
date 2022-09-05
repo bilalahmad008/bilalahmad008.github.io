@@ -1,0 +1,209 @@
+{% extends 'student/base.html' %}
+{% block title %}Courses{% endblock title %}
+{% load static %}
+{% block body %}
+
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="{% static 'images/backgrounds/8.jpg' %}">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="list-inline custom-breadcrumb">
+            <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Our Courses</a></li>
+            <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+          </ul>
+          <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /page title -->
+
+
+
+  
+<!-- courses -->
+
+
+
+<section class="section">
+  <div class="container">
+    <div class="col-12">
+      <h2 class="section-title">Courses Offered</h2>
+    </div>
+    <!-- course list -->
+<div class="row justify-content-center">
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="{% static 'images/program/cs.jpg' %}" alt="course thumb">
+      <div class="card-body">
+        <a href="course-single.html">
+          <h4 class="card-title">Bachelor of Science in Computer Science</h4>
+        </a>
+        <p class="card-text mb-4">Computer Science is the study of the theoretical and practical aspects of computer technology and computer usage. The main purpose of CIIT’s BS computer science is to provide students with a durable foundation, with a comprehensive set of electives so that computer scientists can be produced.</p>
+        <a href="http://ww2.comsats.edu.pk/cs_swl/BSCS.aspx" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="{% static 'images/program/se.jpg' %}" alt="course thumb">
+      <div class="card-body">
+        <a href="course-single.html">
+          <h4 class="card-title">Bachelor of Science in Software Engineering</h4>
+        </a>
+        <p class="card-text mb-4"> The Bachelor of Science in Software Engineering (BSSE) program explores a wide range of course topics, including software engineering principles, software specifications and software architecture. The mission of the bachelors of science degree in software engineering is careers making.</p>
+        <a href="http://ww2.comsats.edu.pk/cs_swl/BSSoftwareEngineering.aspx" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="{% static 'images/program/tcn.png' %}" alt="course thumb">
+      <div class="card-body">
+        <a href="course-single.html">
+          <h4 class="card-title">Bachelor of Science in Telecommunication and Networking</h4>
+        </a>
+        <p class="card-text mb-4"> Pakistan's telecom industry has seen massive growth in the last few years. The industry is searching for individuals who have in-depth theoretical knowledge and are skillful and competent in running the operations along with a strong mathematical background.</p>
+        <a href="http://ww2.comsats.edu.pk/cs_swl/BTN.aspx" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="{% static 'images/program/me.jpg' %}" alt="course thumb">
+      <div class="card-body">
+        <a href="course-single.html">
+          <h4 class="card-title">Bachelor of Science in Mechanical Engineering BS(ME)</h4>
+        </a>
+        <p class="card-text mb-4">After a successful Zero visit, the Pakistan Engineering Council (PEC) has granted the initial accreditation with permission to start CIIT first undergraduate program in Mechanical Engineering. The department has inducted the first batch of students in BS program from fall 2010.</p>
+        <a href="http://ww2.comsats.edu.pk/mech_swl/BSME.aspx" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="{% static 'images/program/ee.jpg' %}" alt="course thumb">
+      <div class="card-body">
+        <a href="course-single.html">
+          <h4 class="card-title">Bachelor of Science in Electrical Engineering</h4>
+        </a>
+        <p class="card-text mb-4">After a successful Zero visit, the Pakistan Engineering Council (PEC) has granted the initial accreditation with permission to start CIIT first undergraduate program in Electrical Engineering. The department has inducted the first batch of students in BS program from Spring 2014. Eight semester Bachelor’s degree program.</p>
+        <a href="http://ww2.comsats.edu.pk/ee_swl/BSEE.aspx" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="{% static 'images/program/ce.jpg' %}" alt="course thumb">
+      <div class="card-body">
+        <a href="course-single.html">
+          <h4 class="card-title">Bachelor of Science in Civil Engineering BS (CE)</h4>
+        </a>
+        <p class="card-text mb-4"> The department of Civil Engineering was established in April 2015 with the approval of the CUI
+          Executive Committee (CEC) in its 85th meeting held on February 2, 2015. The department inducted
+          the first batch of students in BS program as per expected successful Zero visit of Pakistan
+          Engineering Council.</p>
+        <a href="http://ww2.comsats.edu.pk/civil_swl/bsce.aspx" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /course list -->
+    <!-- course list -->
+<div class="row justify-content-center">
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="{% static 'images/program/bi.jpg' %}" alt="course thumb">
+      <div class="card-body">
+        <a href="course-single.html">
+          <h4 class="card-title">Bachelor of Science in Bioinfomatics BS(BI)</h4>
+        </a>
+        <p class="card-text mb-4"> Bioinformatics is a new and exciting field that stands at the intersection of biology, computer science and information technology, and is among the most revolutionary scientific disciplines of the twenty-first century.At the completion of this programme, students are expected to know the relationship between genes and proteins and use of computers in handling flood of biological data which started with the completion of Human Genome project. </p>
+        <a href="http://ww2.comsats.edu.pk/bio_swl/BSBI.aspx" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="{% static 'images/program/fsn.jpg' %}" alt="course thumb">
+      <div class="card-body">
+        <a href="course-single.html">
+          <h4 class="card-title">Bachelor of Science in Food Science and Nutrition</h4>
+        </a>
+        <p class="card-text mb-4">Food Science and Nutrition is a rapidly growing discipline, drawing knowledge from a range of disciplines including biology, chemistry, food engineering and even business.  Availability of food, especially nutritive food is a big problem for the developing countries. According to a report, 40% of the Pakistani is living below the poverty line and 44% of children under the age of 5 are stunted and unlikely to reach their full mental and physical potential in Pakistan. </p>
+        <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="{% static 'images/program/math.jpg' %}" alt="course thumb">
+      <div class="card-body">
+        <a href="course-single.html">
+          <h4 class="card-title">Bachelor of Science in Mathematics</h4>
+        </a>
+        <p class="card-text mb-4"> The BS Mathematics programme at CUI, Sahiwal is specifically designed to meet international trends and standards for mathematical education. This undergraduate programme is aimed at the enhancement of problem solving skills to handle research problems through research projects. The course outline followed in this programme providing  a best solulion solid foundation for the investigations of real world problems .</p>
+        <a href="http://ww2.comsats.edu.pk/math_swl/bsmath.aspx" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="{% static 'images/program/hss.jpg' %}" alt="course thumb">
+      <div class="card-body">
+        <a href="course-single.html">
+          <h4 class="card-title">BS(Hounrs) Humanities & Social Sciences</h4>
+        </a>
+        <p class="card-text mb-4"> It is represented by thousands of architectureal remains and buildings that reflect many epochs of human history starting from the Stone Age and going to the Harappan or Indus Civilization.</p>
+        <a href="http://ww2.comsats.edu.pk/hs_swl/" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="{% static 'images/program/BBA.jpg' %}" alt="course thumb">
+      <div class="card-body">
+        <a href="course-single.html">
+          <h4 class="card-title">Bachelor of Science in Business Administration (BSBA)</h4>
+        </a>
+        <p class="card-text mb-4"> The advancement of technology has led to a paradigm shift in how businesses are conducted which is also reflected by our business education. I, as Dean of the Faculty, assure you that the skillful.</p>
+        <a href="http://ww2.comsats.edu.pk/ms_swl/" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="{% static 'images/program/fa.jpg' %}" alt="course thumb">
+      <div class="card-body">
+        <a href="course-single.html">
+          <h4 class="card-title">Bachelor of Science in Accounting & Finance (BSA&F)</h4>
+        </a>
+        <p class="card-text mb-4">  Faculty of Business Administration is making sure our students are prepared with the latest knowledge and market-driven skills required to succeed in this dynamic environment.</p>
+        <a href="http://ww2.comsats.edu.pk/ms_swl/" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /course list -->
+  </div>
+</section>
+<!-- /courses -->
+
+
+
+
+ {% endblock %}

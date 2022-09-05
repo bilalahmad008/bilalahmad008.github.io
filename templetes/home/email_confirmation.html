@@ -1,0 +1,14 @@
+{% autoescape off %}
+Welcome to CUI-Transport Login
+
+Hello {{name}}!
+
+your Accounts details are: 
+username: {{username}}
+password: {{password}}
+
+Please Confirm your email by clicking the following link.
+
+Confirmation_Link: http://{{domain}}{% url 'activate' uidb64=uid token=token %}
+
+{% endautoescape %}

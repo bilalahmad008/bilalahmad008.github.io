@@ -1,0 +1,338 @@
+{% extends 'home/reportbase.html' %}
+{% load static %}
+{% block body %}
+
+<div id="wrapper">
+    <div class="main-content">
+        <div class="row small-spacing">
+            <div class="col-xs-12">
+
+
+				<div class="box-content">
+					<h4 class="box-title">Enter The Employee Data</h4>
+					<!-- /.box-title -->
+		
+					<form id="commentForm" action="#" novalidate="novalidate">
+						<div id="tabsleft" class="tabbable tabs-left">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#tabsleft-tab1" data-toggle="tab" aria-expanded="true">Personal </a></li>
+								<li class=""><a href="#tabsleft-tab2" data-toggle="tab" aria-expanded="false">Education </a></li>
+								<li class=""><a href="#tabsleft-tab3" data-toggle="tab" aria-expanded="false">Emergency </a></li>
+								<li class=""><a href="#tabsleft-tab4" data-toggle="tab" aria-expanded="false">Medical </a></li>
+								<li class=""><a href="#tabsleft-tab5" data-toggle="tab" aria-expanded="false">Courses </a></li>
+								<li class=""><a href="#tabsleft-tab6" data-toggle="tab" aria-expanded="false">Expirence </a></li>
+								<li class=""><a href="#tabsleft-tab7" data-toggle="tab" aria-expanded="false">Job </a></li>
+							</ul>
+							<div class="tab-content">
+
+
+								<!-- personal Details -->
+
+								<div class="tab-pane active" id="tabsleft-tab1">
+
+									<table id="example" class="table table-dark table-hover">
+										<thead>
+										  <tr>
+											<th scope="col">Registration</th>
+											<th scope="col">Name</th>
+											<th scope="col">Father Name</th>
+											<th scope="col">Gender</th>
+											<th scope="col">DOB</th>
+											<th scope="col">CNIC</th>
+											<th scope="col">PH#1</th>
+											<th scope="col">EMAIL</th>
+											<th scope="col">ADDRESS</th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <!-- Run a for loop here and iterate through all the index -->
+										  {% for employee in task %}
+										  
+										  <tr>
+									  
+										 
+											<td class="table-secondary" >{{employee.emp_id}}</td>
+											<td class="table-success">{{employee.name}}</td>
+											<td class="table-danger">{{employee.fname}}</td>
+											<td class="table-danger">{{employee.gender}}</td>
+											<td class="table-danger">{{employee.dob}}</td>
+											<td class="table-danger">{{employee.cnic}}</td>
+											<td class="table-danger">{{employee.ph1}}</td>
+											<td class="table-danger">{{employee.email}}</td>
+											<td class="table-danger">{{employee.city}}</td>
+
+										  
+										  {% endfor %}
+									  
+										</tbody>
+									  
+									   
+									  </table>
+								</div>
+
+
+								<!-- educational details -->
+
+								<div class="tab-pane" id="tabsleft-tab2">
+								
+									<table id="example2" class="table table-dark table-hover">
+										<thead>
+											<tr>
+												<th scope="col">Registration</th>
+												<th scope="col">Title</th>
+												<th scope="col">Institute</th>
+												<th scope="col">Board</th>
+												<th scope="col">Total Marks</th>
+												<th scope="col">Obtain Marks</th>
+												<th scope="col">Year of Passing</th>
+												<th scope="col">Percentage</th>
+											  </tr>
+										</thead>
+										<tbody>
+										  <!-- Run a for loop here and iterate through all the index -->
+										  {% for employee in task2 %}
+											
+											<tr>
+										
+										   
+											  <td class="table-secondary" >{{employee.emp_id}}</td>
+											  <td class="table-success">{{employee.title}}</td>
+											  <td class="table-danger">{{employee.institute}}</td>
+											  <td class="table-danger">{{employee.board}}</td>
+											  <td class="table-danger">{{employee.t_marks}}</td>
+											  <td class="table-danger">{{employee.o_marks}}</td>
+											  <td class="table-danger">{{employee.year_of_passing}}</td>
+											  <td class="table-danger">{{employee.persentage}}</td>
+											
+											{% endfor %}
+									  
+										</tbody>
+									  
+									   
+									  </table>
+								</div>
+
+
+
+
+								<!-- emergency Detail -->
+
+								<div class="tab-pane" id="tabsleft-tab3">
+
+
+									<table id="example3" class="table table-dark table-hover">
+										<thead>
+											<tr>
+											  <th scope="col">Registration</th>
+											  <th scope="col">Name</th>
+											  <th scope="col">Relation</th>
+											  <th scope="col">Phone#</th>
+											  <th scope="col">Mobile#</th>
+											  <th scope="col">Email</th>
+											  <th scope="col">City</th>
+											  <th scope="col">Address</th>
+											</tr>
+										  </thead>
+										  <tbody>
+											<!-- Run a for loop here and iterate through all the index -->
+											{% for employee in task3 %}
+											
+											<tr>
+										
+										   
+											  <td class="table-secondary" >{{employee.emp_id}}</td>
+											  <td class="table-success">{{employee.name}}</td>
+											  <td class="table-danger">{{employee.relation}}</td>
+											  <td class="table-danger">{{employee.ph1}}</td>
+											  <td class="table-danger">{{employee.ph2}}</td>
+											  <td class="table-danger">{{employee.email}}</td>
+											  <td class="table-danger">{{employee.city}}</td>
+											  <td class="table-danger">{{employee.adress}}</td>
+											
+											{% endfor %}
+										
+										  </tbody>
+									
+                       
+									</table>
+								</div>
+
+
+								<!-- Medical Detail -->
+
+								<div class="tab-pane" id="tabsleft-tab4">
+
+
+
+
+
+									<table id="example4" class="table table-dark table-hover">
+										<thead>
+											<tr>
+												<th scope="col">Registration</th>
+												<th scope="col">Blood Group</th>
+												<th scope="col">Organ Donor</th>
+												<th scope="col">Disability</th>
+												<th scope="col"> Fitness</th>
+											  </tr>
+										  </thead>
+										  <tbody>
+											<!-- Run a for loop here and iterate through all the index -->
+											{% for employee in task4 %}
+											
+											<tr>
+										
+										   
+												<td class="table-secondary" >{{employee.emp_id}}</td>
+												<td class="table-success">{{employee.blood}}</td>
+												<td class="table-danger">{{employee.organ_doner}}</td>
+												<td class="table-danger">{{employee.disability}}</td>
+												<td class="table-danger">{{employee.fitness}}</td>
+											
+											{% endfor %}
+										
+										  </tbody>
+								
+                       
+									</table>
+
+								</div>
+
+
+
+								<!-- Courses -->
+								<div class="tab-pane" id="tabsleft-tab5">
+
+
+									
+									<table id="example5" class="table table-dark table-hover">
+										<thead>
+											<tr>
+											  <th scope="col">Registration</th>
+											  <th scope="col">Title</th>
+											  <th scope="col">Institute</th>
+											  <th scope="col">Duration</th>
+											  <th scope="col">Date Of Completion</th>
+											  <th scope="col">Certificate</th>
+											  <th scope="col">Number of Projects</th>
+											</tr>
+										  </thead>
+										  <tbody>
+											<!-- Run a for loop here and iterate through all the index -->
+											{% for employee in task5 %}
+											
+											<tr>
+										
+										   
+											  <td class="table-secondary" >{{employee.emp_id}}</td>
+											  <td class="table-success">{{employee.title}}</td>
+											  <td class="table-danger">{{employee.institute}}</td>
+											  <td class="table-danger">{{employee.Duration}}</td>
+											  <td class="table-danger">{{employee.date_of_complition}}</td>
+											  <td class="table-danger">{{employee.certificate}}</td>
+											  <td class="table-danger">{{employee.no_of_project}}</td>
+											
+											{% endfor %}
+										
+										  </tbody>
+								
+                       
+									</table>
+				
+								</div>
+
+
+
+								<!-- Expirence -->
+								<div class="tab-pane" id="tabsleft-tab6">
+
+
+									
+									<table id="example6" class="table table-dark table-hover">
+										<thead>
+											<tr>
+											  <th scope="col">Registration</th>
+											  <th scope="col">Organization</th>
+											  <th scope="col">Designation</th>
+											  <th scope="col">Address</th>
+											  <th scope="col">Joining Date</th>
+											  <th scope="col"> Leaving Date</th>
+											</tr>
+										  </thead>
+										  <tbody>
+											<!-- Run a for loop here and iterate through all the index -->
+											{% for employee in task6 %}
+											
+											<tr>
+										
+										   
+											  <td class="table-secondary" >{{employee.emp_id}}</td>
+											  <td class="table-success">{{employee.organization}}</td>
+											  <td class="table-danger">{{employee.Designation}}</td>
+											  <td class="table-danger">{{employee.adress}}</td>
+											  <td class="table-danger">{{employee.joining_date}}</td>
+											  <td class="table-danger">{{employee.leaving_date}}</td>
+											
+											{% endfor %}
+										
+										  </tbody>
+									
+									</table>
+
+								</div>
+
+
+								<!-- Job details -->
+								<div class="tab-pane" id="tabsleft-tab7">
+
+									<table id="example7" class="table table-dark table-hover">
+										<thead>
+											<tr>
+												<th scope="col">Registration</th>
+												<th scope="col">Designation</th>
+												<th scope="col">Duty Hours</th>
+												<th scope="col">Job Description</th>
+											  </tr>
+										  </thead>
+										  <tbody>
+											<!-- Run a for loop here and iterate through all the index -->
+											{% for employee in task7 %}
+											
+											<tr>
+										
+										   
+												<td class="table-secondary" >{{employee.emp_id}}</td>
+												<td class="table-success">{{employee.Designation}}</td>
+												<td class="table-danger">{{employee.duty_time}}</td>
+												<td class="table-danger">{{employee.job_description}}</td>
+											
+											{% endfor %}
+										
+										  </tbody>
+									
+									</table>
+																		
+								
+										
+				
+								</div>
+
+
+
+
+								
+							</div>
+						</div>
+					</form>
+				</div>
+
+
+
+<!-- </div> -->                    
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

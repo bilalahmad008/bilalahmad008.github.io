@@ -1,0 +1,129 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Login 10</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'student/css/login.css' %}">
+	
+	</head>
+	<body class="img js-fullheight" style="background-image: url(https://images.squarespace-cdn.com/content/v1/5b4630f385ede1c0a574c4ce/1587758606668-TC453W2T6TXO99TRYWL0/image-asset.jpeg?format=1500w);">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Comsats University Sahiwal</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4 text-center">SIGN UP</h3>
+		      	<form action="" class="signin-form" method="post">
+					{% csrf_token %}
+		      		<div class="form-group">
+		      			<input type="text" class="form-control" id="username" name="username" placeholder="Registration#" required>
+		      		</div>
+
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Name" required id="first_name" name="first_name">
+					</div>
+
+					<div class="form-group">
+						<input type="email" class="form-control" placeholder="Email" required id="email" name="email">
+					</div>
+
+					<div class="form-group">
+						<select class="form-control" name="last_name" id="last_name" required >
+							<option style="background-color: gray;" value="" >---select Designation---</option>
+							<option style="background-color: gray;" value="Student">Student</option>
+							<option style="background-color: gray;" value="Staff">Staff</option>
+						</select>
+					</div>
+
+	            <div class="form-group">
+	              <input  type="password" class="form-control" placeholder="Password" required name="pass1" id="pass1">
+	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	            </div>
+				<div class="form-group">
+					<input  type="password" class="form-control" placeholder="confirm password" required name="pass2" id="pass2"> 
+					<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+				  </div>
+	            <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">SIGN UP</button>
+	            </div>
+	       
+	          </form>
+			  <div class="w-50 text-md-right">
+				<a href="/" style="color: #fff">Sign In</a>
+			</div>	  
+	         
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	
+	
+	
+	<script src="{% static 'js/login/jquery.min.js' %}"></script>
+  <script src="{% static 'js/login/popper.js' %}"></script>
+  <script src="{% static 'js/login/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/login/main.js' %}"></script>
+
+    <!-- Alerts links -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<!--JQuery CDN-->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<!--Sweet Alert CDN-->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	
+	<script>
+	 
+	
+	  $('.delete').on('click',function (e) {
+			e.preventDefault();
+			var self = $(this);
+			console.log(self.data('title'));
+			Swal.fire({
+				title: 'Are you sure?',
+				text: "You won't be able to revert this!",
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Yes, delete it!'
+			}).then((result) => {
+				if (result.isConfirmed) {
+					Swal.fire(
+						'Deleted!',
+						'Your file has been deleted.',
+						'success'
+					)
+				  location.href = self.attr('href');
+				}
+				else {
+		swal.fire("Your imaginary file is safe!");
+	  }
+			})
+	
+		})
+	
+		{% for msg in messages %}
+		swal.fire('{{msg}}',Swal.fire(
+		  'Your file has been deleted.',
+		  'success'
+	  ));
+		{% endfor %}
+	</script>
+
+	</body>
+</html>
+

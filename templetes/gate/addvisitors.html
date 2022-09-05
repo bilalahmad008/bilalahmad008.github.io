@@ -1,0 +1,177 @@
+{% extends 'gate/base.html' %}
+{% load static %}
+
+
+{% block title %} index {% endblock title %}
+
+{% block body %}
+
+ 
+<section class="home" style="background-color:transparent ;">
+
+
+   
+
+  <div class="row" style="margin-top:40px ;">
+
+
+      <div class="col-md-12">
+         <h1 style="text-align: center; color: white;">Visitors </h1>
+      </div>
+   </div>
+
+<div class="row">
+
+
+
+<div class="col-md-3"></div>
+<div class="col-md-6">
+
+<form action="" method="post">
+  {% csrf_token %}
+<div class="mb-3">
+<label   class="form-label">Name</label>
+<input type="text" class="form-control visitname" placeholder="Enter Name" name="name" id="name" required >
+</div>
+
+<div class="mb-3">
+<label    class="form-label">CNIC #</label>
+<input type="number" class="form-control visitname" placeholder="Enter CNIC No" id="cnic" name="cnic" required>
+</div>
+<div class="mb-3">
+<label    class="form-label">Purpose</label>
+<input type="text" class="form-control visitname" placeholder="Enter Purposes" name="purpose" id="purpose" required>
+</div>
+<button type="submit" class="btn visitbtn">Submit</button>
+</form>
+
+
+
+
+
+
+
+</div>
+<div class="col-md-3"></div>
+
+</div>
+<div class="row">
+
+<div class="col-md-12">
+<br><br><br>
+<hr style="  background-color:#572B77"></div>
+
+</div>
+
+
+
+
+
+ 
+<div class="row" style="margin-top:40px ;">
+
+
+   <div class="col-md-12">
+      <h1 style="text-align: center; color: white;">Current Visitors </h1>
+   </div>
+</div>
+
+
+
+
+
+
+
+<div class="row" style="margin-top:40px ;">
+
+
+ 
+
+   <div class="col-md-1"></div>
+   <div class="col-md-10">
+   
+   
+      <table class="table table1 " style="color: white; ">
+         <thead>
+           <tr style="background-color:#572B77; ">
+             <th scope="col">#</th>
+             <th scope="col">Name</th>
+             <th scope="col">CNIC</th>
+             <th scope="col">Purpose</th>
+             <th scope="col">Date/Time</th>
+             <th scope="col">Out-Time</th>
+              
+             
+           </tr>
+         </thead>
+         <tbody>
+           {% for data in task %}
+           <tr style="background-color:#d9b0f7;">
+            <th scope="col">{{forloop.counter}}</th>
+            <th scope="col">{{data.name}}</th>
+            <th scope="col">{{data.cnic}}</th>
+            <th scope="col">{{data.purpose}}</th>
+            <th scope="col">{{data.date1}}</th>
+
+             <td>
+              <form class="row g-3" method="post" action="{%  url 'outvistorinsertion' %}">
+                {% csrf_token %}
+               <div class="col-auto">
+                <input type="text" name="vid" id="vid" value="{{data.id}}" hidden>
+                 <button type="submit" class="btn btn-primary mb-3 outtime">Out</button>
+               </div>
+             </form>
+            </td>
+          </tr>
+          {% endfor %}
+
+           
+            
+         </tbody>
+       </table>
+   
+   
+   
+   
+   
+        
+   
+   </div>
+   <div class="col-md-1"></div>
+   
+   
+ 
+
+
+
+
+
+</div>
+
+
+
+
+<div class="row">
+
+<div class="col-md-12">
+   <br><br><br>
+   <hr style="  background-color:#572B77"></div>
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+ 
+
+{% endblock body %}
+
+

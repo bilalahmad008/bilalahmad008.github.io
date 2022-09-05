@@ -1,0 +1,174 @@
+{% extends 'home/reportbase.html' %}
+{% load static %}
+{% block body %}
+
+
+<div id="wrapper">
+  <div class="main-content">
+    <div class="row small-spacing">
+      <div class="col-xs-12">
+
+        <div class="container-fluid">
+
+
+          <h4 class="text-center alert" style="background-color: #304FFE; color: white;">Register Accounts</h4>
+      
+      
+      
+      
+      
+
+          <table id="example" class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">UserName</th>
+                <th scope="col">Name</th>
+                <th scope="col">Designation</th>
+                <th scope="col">Email</th>
+                <th scope="col">password</th>
+                <th scope="col">Activation</th>
+                <th scope="col">Update</th>
+              
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Run a for loop here and iterate through all the index -->
+              
+              
+              {% for i in all_accounts %}
+              <tr>
+                <td class="table-secondary">{{forloop.counter}}</td>
+                <td class="table-secondary">{{i.username}}</td>
+                <td class="table-secondary">{{i.first_name}}</td>
+                <td class="table-secondary">{{i.last_name}}</td>
+                <td class="table-secondary">{{i.email}}</td>
+                <td class="table-secondary">{{i.password}}</td>
+                <td class="table-secondary">
+                  <form action="{%  url 'activate_account_link' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="tempusername" id="tempusername" value="{{i.username}}" hidden>
+                    <input type="text" name="tempfirstname" id="tempfirstname" value="{{i.first_name}}" hidden>
+                    <input type="text" name="templastname" id="templastname" value="{{i.last_name}}" hidden>
+                    <input type="text" name="tempemail" id="tempemail" value="{{i.email}}" hidden>
+                    <input type="text" name="temppassword" id="temppassword" value="{{i.password}}" hidden>
+                    
+
+                    
+                  <button type="submit"  class="btn btn-success btn-rounded btn-bordered waves-effect waves-light">Activate</button>
+
+                   </form>
+
+                </td>
+                <td class="table-secondary">
+                  <form action="{%  url 's_account_update' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="tempusername" id="tempusername" value="{{i.username}}" hidden>
+                    <input type="text" name="tempfirstname" id="tempfirstname" value="{{i.first_name}}" hidden>
+                    <input type="text" name="templastname" id="templastname" value="{{i.last_name}}" hidden>
+                    <input type="text" name="tempemail" id="tempemail" value="{{i.email}}" hidden>
+
+                  <button type="submit" class="btn btn-danger btn-rounded btn-bordered waves-effect waves-light" >update</a></button>
+                    <!-- <button type="button" href="www.google.com"  class="btn btn-danger btn-rounded btn-bordered waves-effect waves-light delete">Update</button> -->
+                  </form>
+                </td>
+         
+              </tr>
+              {% endfor %}
+    
+              
+          
+            </tbody>
+          
+           
+          </table>
+
+        </div>
+
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Alerts links -->
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <!--JQuery CDN-->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <!--Sweet Alert CDN-->
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+           <script>
+     
+    
+            $('.delete').on('click',function (e) {
+                  e.preventDefault();
+                  var self = $(this);
+                  console.log(self.data('title'));
+                  Swal.fire({
+                      title: 'Are you sure?',
+                      text: "You won't be able to revert this!",
+                      icon: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: 'Yes, delete it!'
+                  }).then((result) => {
+                      if (result.isConfirmed) {
+                         
+                          location.url = self.attr('url');
+                      }
+                      else {
+              swal.fire("Your imaginary file is safe!");
+            }
+                  })
+          
+              })
+
+
+
+              
+            $('.update').on('click',function (e) {
+                  e.preventDefault();
+                  var self = $(this);
+                  console.log(self.data('title'));
+                  Swal.fire({
+                      title: 'Activate?',
+                      text: "Activation link will be send to email!",
+                      icon: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: 'Yes, Activate!'
+                  }).then((result) => {
+                      if (result.isConfirmed) {
+                          
+                        location.url = self.attr('url');
+                      }
+                      
+                  })
+          
+              })
+          
+              {% for msg in messages %}
+              swal.fire('{{msg}}',Swal.fire(
+                'Your file has been deleted.',
+                'success'
+            ));
+              {% endfor %}
+          </script>
+
+
+{% endblock %}

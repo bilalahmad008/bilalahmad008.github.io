@@ -1,0 +1,166 @@
+{% extends 'student/base.html' %}
+{% block title %}Contact{% endblock title %}
+{% load static %}
+{% block body %}
+
+
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="{% static 'student/images/backgrounds/page-title.jpg' %}">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="list-inline custom-breadcrumb">
+            <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Contact Us</a></li>
+            <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+          </ul>
+          <p class="text-lighten">Do you have other questions? Don't worry, contact Transport Department.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /page title -->
+ 
+<div class="container my-4">
+
+    {% if flag == 0 %}
+    
+    <div class="col-sm-12">
+
+        <h4 class="text-center alert alert-info"> Registration </h4>
+
+        <form enctype="multipart/form-data" method="post" action="">
+            {% csrf_token %}
+            <!-- 1 -->
+            <div class="mb-3">
+                <label for="adress" class="form-label">Registration Number</label>
+                <input type="text" class="form-control" id="rigid" name="rigid"
+                    placeholder="" value="{{user_name}}" readonly>
+            </div>
+
+            <div class="mb-3">
+                <label for="adress" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name"
+                    value="{{full_name}}" readonly>
+            </div>
+
+         
+
+            <div class="mb-3">
+                <label for="adress" class="form-label">Session</label>
+                <input type="text" class="form-control" id="session" name="session"
+                    placeholder="" value="{{temp_session}}" readonly>
+            </div>
+
+
+            <!-- 2 -->
+
+            <div class="mb-3">
+                <label for="adress" class="form-label">profession</label>
+                <input type="text" class="form-control" id="profession" name="profession"
+                    placeholder="" value="{{temp_prof}}" readonly>
+            </div>
+
+            <!-- 3 -->
+            <div class="mb-3">
+                <label for="sec" class="form-label">University Hostel Residence</label>
+                <select class="form-control" name="uni_hostel_resident" id="uni_hostel_resident" required>
+                    <option selected>{{uni_residence}}</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+
+
+            <!-- 4 -->
+            <div class="mb-3">
+                <label for="adress" class="form-label">city</label>
+                <select class="form-control" name="city" id="city"  onChange="form.submit();">
+                    <option data-display="Select">{{city}}</option>
+                
+                {% for i in allcity %}
+                <option value="{{i.name}}" >{{i.name}}</option>
+                {% endfor %}
+                   </select>
+            </div>
+
+
+            <!-- 5 -->
+            
+            <div class="mb-3">
+                <label for="adress" class="form-label">Route</label>
+                <select class="form-control" name="route" id="route"   onChange="form.submit();">
+                    <option selected>{{idnt}}</option>
+                
+              {% for i in route %}
+              <option value="{{i.name}}">{{i.name}}</option>
+              {% endfor %}
+    
+                  </select>
+            </div>
+           <!-- 6 -->
+
+           <div class="mb-3">
+            <label for="adress" class="form-label">Stop</label>
+            <select class="form-control" name="stop" id="stop" required>
+                <option selected> Select stop</option>
+                {% for i in stops %}
+              <option value="{{i.name}}">{{i.name}}</option>
+              {% endfor %}
+              </select>
+        </div>
+            
+
+            <!-- 7 -->
+            <div class="mb-3">
+                <label for="adress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="adress" name="adress" placeholder="please enter Adress" required>
+                <span>Upload your Exect home location points</span>
+            </div>
+
+
+            <!-- 8 -->
+            <div class="mb-3">
+                <label for="adress" class="form-label">Phone Numer</label>
+                <input type="number" class="form-control" min="11" id="ph" name="ph" placeholder="please enter Phone Numer" required>
+            </div>
+
+             <!-- 8 -->
+             <div class="mb-3">
+                <label for="adress" class="form-label">Emergency Numer</label>
+                <input type="number" class="form-control" min="11" id="emergency_ph" name="emergency_ph" placeholder="please enter Phone Numer" required>
+            </div>
+            <!-- 9 -->
+            <div class="mb-3">
+                <label for="name" class="form-label">Registration Date</label>
+                <input class="form-control" type="date" id="date1" name="date1" required>
+            </div>
+            <!-- 10 -->
+            <div class="mb-3">
+                <label for="adress" class="form-label">Student Card Picture</label>
+                <input type="file"class="form-control" id="image1" name="image1" accept="image/png, image/jpeg" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
+        </form>
+
+    </div>
+    {% endif %}
+
+
+    {% if flag == 1 %}
+
+    <div class="col-sm-12">
+        <h4 class="text-center alert alert-info"> You are Already Registered for this semester </h4>
+    </div>
+
+    {% endif %}
+
+
+
+</div>
+
+
+
+{% endblock %}

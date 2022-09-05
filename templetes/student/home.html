@@ -1,0 +1,309 @@
+{% extends 'student/base.html' %}
+{% block title %}Home{% endblock title %} 
+{% load static %}
+ {% block body %}
+ {% comment %} 
+<div class="container">
+  <h1>Crud operation</h1>
+  <h3>Adding Data</h3>
+
+  <form action="#" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h4>name</h4>
+    <input type="text" name="name" id="name" placeholder="name" />
+    <h4>reg</h4>
+    <input type="text" name="reg" id="reg" placeholder="reg" />
+    <h4>email</h4>
+    <input type="text" name="email" id="email" placeholder="email" />
+    <h4>image</h4>
+    <input type="file" id="image" name="image" accept="image/png, image/jpge" />
+    <button type="submit">submit</button>
+  </form>
+</div>
+{% endcomment %}
+
+<!-- hero slider -->
+<section
+  class="hero-section overlay bg-cover"
+  data-background="{% static 'student/images/banner/4.jpg' %}"
+>
+  <div class="container">
+    <div class="hero-slider">
+      <!-- slider item -->
+      <div class="hero-slider-item">
+        <div class="row">
+          <div class="col-md-8">
+            <h1
+              class="text-white"
+              data-animation-out="fadeOutRight"
+              data-delay-out="5"
+              data-duration-in=".3"
+              data-animation-in="fadeInLeft"
+              data-delay-in=".1"
+            >
+              Your bright future is our mission
+            </h1>
+            <p
+              class="text-muted mb-4"
+              data-animation-out="fadeOutRight"
+              data-delay-out="5"
+              data-duration-in=".3"
+              data-animation-in="fadeInLeft"
+              data-delay-in=".4"
+            >
+             "Learn to lead"<br>
+              we have survied to our students so that they can perform thier
+              bests in exam and fullfil thier parents dreams.
+            </p>
+            <a
+              href="/courses"
+              class="btn btn-primary"
+              data-animation-out="fadeOutRight"
+              data-delay-out="5"
+              data-duration-in=".3"
+              data-animation-in="fadeInLeft"
+              data-delay-in=".7"
+              >Apply now</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- slider item -->
+      <div class="hero-slider-item">
+        <div class="row">
+          <div class="col-md-8">
+            <h1
+              class="text-white"
+              data-animation-out="fadeOutUp"
+              data-delay-out="5"
+              data-duration-in=".3"
+              data-animation-in="fadeInDown"
+              data-delay-in=".1"
+            >
+              Your bright future is our mission
+            </h1>
+            <p
+              class="text-muted mb-4"
+              data-animation-out="fadeOutUp"
+              data-delay-out="5"
+              data-duration-in=".3"
+              data-animation-in="fadeInDown"
+              data-delay-in=".4"
+            >
+            "Learn to lead"<br>
+            we have survied to our students so that they can perform thier
+            bests in exam and fullfil thier parents dreams.
+            </p>
+            <a
+              href="/courses"
+              class="btn btn-primary"
+              data-animation-out="fadeOutUp"
+              data-delay-out="5"
+              data-duration-in=".3"
+              data-animation-in="fadeInDown"
+              data-delay-in=".7"
+              >Apply now</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- slider item -->
+      <div class="hero-slider-item">
+        <div class="row">
+          <div class="col-md-8">
+            <h1
+              class="text-white"
+              data-animation-out="fadeOutDown"
+              data-delay-out="5"
+              data-duration-in=".3"
+              data-animation-in="fadeInUp"
+              data-delay-in=".1"
+            >
+              Your bright future is our mission
+            </h1>
+            <p
+              class="text-muted mb-4"
+              data-animation-out="fadeOutDown"
+              data-delay-out="5"
+              data-duration-in=".3"
+              data-animation-in="fadeInUp"
+              data-delay-in=".4"
+            >
+            "Learn to lead"<br>
+            we have survied to our students so that they can perform thier
+            bests in exam and fullfil thier parents dreams.
+            </p>
+            <a
+              href="/courses"
+              class="btn btn-primary"
+              data-animation-out="fadeOutDown"
+              data-delay-out="5"
+              data-duration-in=".3"
+              data-animation-in="zoomIn"
+              data-delay-in=".7"
+              >Apply now</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /hero slider -->
+
+<!-- banner-feature -->
+<section class="bg-gray overflow-md-hidden">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
+      <div class="col-xl-4 col-lg-5 align-self-end">
+        <img
+          class="img-fluid w-100"
+          src="{% static 'student/images/home/9.jpg' %}"
+          alt="banner-feature"
+        />
+      </div>
+      <div class="col-xl-8 col-lg-7">
+        <div class="row feature-blocks bg-gray justify-content-between">
+          <div
+            class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left"
+          >
+            <i class="ti-book mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
+            <h3 class="mb-xl-4 mb-lg-3 mb-4">Scholorship News</h3>
+            <p>
+              Explore the local and international scholarships on our Scholarships Portal. These include Faculty/Staff Scholarships and Student Scholarships
+            </p>
+          </div>
+          <div
+            class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left"
+          >
+            <i class="ti-blackboard mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
+            <h3 class="mb-xl-4 mb-lg-3 mb-4">Our Staff & Faculty</h3>
+            <p>
+              CUI Sahiwal has four faculties, six Departments and One Research Center, as of April 2015. The complete distribution of Faculties & Departments is as follows
+            </p>
+          </div>
+          <div
+            class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left"
+          >
+            <i class="ti-agenda mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
+            <h3 class="mb-xl-4 mb-lg-3 mb-4">Our Achievements</h3>
+            <p>
+              Our Faculty and Staff members uploaded their research work on our Research Portal. Campus research output is also available on this portal
+            </p>
+          </div>
+          <div
+            class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left"
+          >
+            <i class="ti-write mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
+            <h3 class="mb-xl-4 mb-lg-3 mb-4">Admission Now</h3>
+            <p>
+              Admissions in Graduate and Undergraduate programs are offered on merit in CUI. The merit is determined on the basis of academic record
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /banner-feature -->
+
+<!-- about us -->
+<section class="section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 order-2 order-md-1">
+        <h2 class="section-title">Message From The Director COMSATS, Sahiwal</h2>
+        <p>
+          COMSATS University Islamabad is one of the most prestigious universities of Pakistan with its seven physical campuses and one virtual campus across the country, CUI distinguishes itself as a leading university in the higher education sector of Pakistan. It gives me an immense pleasure and honor to serve as Director COMSATS University Islamabad, Sahiwal Campus.
+
+        </p>
+      </div>
+      <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
+        <img
+          class="img-fluid w-100"
+          src="{% static 'student/images/d1.jpg' %}"
+          alt="about image"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /about us -->
+
+<!-- courses -->
+<section class="section">
+  <div class="container">
+    <div class="col-12">
+      <h2 class="section-title">Our Departments</h2>
+    </div>
+    <!-- course list -->
+    <div class="row justify-content-center">
+      <!-- course item -->
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+          <img
+            class="card-img-top rounded-0"
+            src="{% static 'student/images/departments/cs.jpg' %}"
+            alt="course thumb"
+          />
+          <div class="card-body">
+            <a href="course-single.html">
+              <h4 class="card-title">Computer Science</h4>
+            </a>
+            <p class="card-text mb-4">
+              The department of computer science was established in December 2008, in response to the up-and-coming needs to prepare IT Professionals of tomorrow for software industry. It has fulfilled the long felt need of quality education in computing, especially in the southern core of the Punjab Province.
+            </p>
+            <a href="http://ww2.comsats.edu.pk/cs_swl/" class="btn btn-primary btn-sm"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- course item -->
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+          <img
+            class="card-img-top rounded-0"
+            src="{% static 'student/images/departments/ablock.jpg' %}"
+            alt="course thumb"
+          />
+          <div class="card-body">
+            <a href="course-single.html">
+              <h4 class="card-title">Administration Department</h4>
+            </a>
+            <p class="card-text mb-4">
+              The infrastructure of the department is pivotal to its vision of multi-disciplinary education and research. It comprises state of the art and well equipped teaching and research laboratories, lecture halls and faculty offices. A degree in Mechanical Engineering gives knowledge.
+            </p>
+            <a href="https://sahiwal.comsats.edu.pk/Offices_Administration.aspx" class="btn btn-primary btn-sm"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- course item -->
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+          <img
+            class="card-img-top rounded-0"
+            src="{% static 'student/images/departments/ms.jpg' %}"
+            alt="course thumb"
+          />
+          <div class="card-body">
+            <a href="course-single.html">
+              <h4 class="card-title">Management Sciences</h4>
+            </a>
+            <p class="card-text mb-4">
+              Department of Management Sciences at CUI Sahiwal, established in 2007, has emerged as the most dynamic and vibrant department. At present, 450 students are getting business education under the Bachelor & Master's degree Programs. The department is committed as per with the market trends. 
+            </p>
+            <a href="http://ww2.comsats.edu.pk/ms_swl/" class="btn btn-primary btn-sm"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /courses -->
+
+{% endblock %}

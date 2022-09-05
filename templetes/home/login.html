@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>CTMS Admin Login</title>
+	
+	<link rel="stylesheet" href="{% static 'assets/styles/style.min.css' %}">
+
+	<!-- Waves Effect -->
+	<link rel="stylesheet" href="{% static 'assets/plugin/waves/waves.min.css' %}">
+
+</head>
+
+<body>
+
+<div id="single-wrapper">
+	<form action="" class="frm-single" method="post">
+		{% csrf_token %}
+		<div class="inside">
+			<div class="title"><strong>CTMS </strong> Admin</div>
+			<!-- /.title -->
+			<div class="frm-title">Login</div>
+			<!-- /.frm-title -->
+			<div class="frm-input"><input type="text" name="username" id="username" placeholder="Username" class="frm-inp" required><i class="fa fa-user frm-ico"></i></div>
+			<!-- /.frm-input -->
+			<div class="frm-input"><input type="password" name="password" id="password" placeholder="Password" class="frm-inp" required><i class="fa fa-lock frm-ico"></i></div>
+			<!-- /.frm-input -->
+			<div class="clearfix margin-bottom-20">
+				<div class="pull-left">
+					<div class="checkbox primary"><input type="checkbox" id="rememberme"><label for="rememberme">Remember me</label></div>
+					<!-- /.checkbox -->
+				</div>
+				<!-- /.pull-left -->
+				<div class="pull-right"><a href="#" class="a-link"><i class="fa fa-unlock-alt"></i>Forgot password?</a></div>
+				<!-- /.pull-right -->
+			</div>
+			<!-- /.clearfix -->
+			<button type="submit" class="frm-submit">Login<i class="fa fa-arrow-circle-right"></i></button>
+	
+			<!-- /.row -->
+			<div class="frm-footer">CTMS © 2022.</div>
+			<!-- /.footer -->
+		</div>
+		<!-- .inside -->
+	</form>
+	<!-- /.frm-single -->
+</div><!--/#single-wrapper -->
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="assets/script/html5shiv.min.js"></script>
+		<script src="assets/script/respond.min.js"></script>
+	<![endif]-->
+	<!-- 
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="{% static 'assets/scripts/jquery.min.js' %}"></script>
+	<script src="{% static 'assets/scripts/modernizr.min.js' %}"></script>
+	<script src="{% static 'assets/plugin/bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'assets/plugin/nprogress/nprogress.js' %}"></script>
+	<script src="{% static 'assets/plugin/waves/waves.min.js' %}"></script>
+
+	<script src="{% static 'assets/scripts/main.min.js' %}"></script>
+
+
+
+	
+         <!-- Alerts links -->
+		 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		 <!--JQuery CDN-->
+		 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		 <!--Sweet Alert CDN-->
+		 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	   
+			  <script>
+		
+	   
+			   $('.delete').on('click',function (e) {
+					 e.preventDefault();
+					 var self = $(this);
+					 console.log(self.data('title'));
+					 Swal.fire({
+						 title: 'Are you sure?',
+						 text: "You won't be able to revert this!",
+						 icon: 'warning',
+						 showCancelButton: true,
+						 confirmButtonColor: '#3085d6',
+						 cancelButtonColor: '#d33',
+						 confirmButtonText: 'Yes, delete it!'
+					 }).then((result) => {
+						 if (result.isConfirmed) {
+							 Swal.fire(
+								 'Deleted!',
+								 'Your file has been deleted.',
+								 'success'
+							 )
+						   location.href = self.attr('href');
+						 }
+						 else {
+				 swal.fire("Your imaginary file is safe!");
+			   }
+					 })
+			 
+				 })
+			 
+				 {% for msg in messages %}
+				 swal.fire('{{msg}}',Swal.fire(
+				   'Your file has been deleted.',
+				   'success'
+			   ));
+				 {% endfor %}
+			 </script>
+	   
+	   
+</body>
+</html>

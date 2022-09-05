@@ -1,0 +1,93 @@
+{% extends 'student/base.html' %}
+{% block title %}Past Papers{% endblock title %}
+{% load static %}
+{% block body %}
+
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="{% static 'images/backgrounds/8.jpg' %}">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="list-inline custom-breadcrumb">
+            <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Past Papers</a></li>
+            <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+          </ul>
+          <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /page title -->
+
+
+  <div class="col-lg-7 mb-4 mb-lg-0 my-4 container">
+
+    <form action="#" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="text" class="form-control mb-3" name="code" id="code" placeholder="Course code" />
+      <select class="form-control mb-3"  name="type" id="type">
+        <option value="mid">Mid Term</option>
+        <option value="final">Final Term</option>
+      </select>
+      <br>
+      <button type="submit"  class="btn btn-primary">Search Ppaper</button>
+    </form>
+  </div>
+
+
+
+
+
+<div class="container my-3">
+
+  <h4 class="text-center alert" style="background-color: #FFBC3B; color: white;">Comsats Past Papers </h4>
+  
+  
+  
+  <table id="example" class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th scope="col-1" style="border: 0.5px solid white;">#</th>
+        <th scope="col-2" style="border: 0.5px solid white;">Subject Name</th>
+        <th scope="col-1" style="border: 0.5px solid white;">Code</th>
+        <th scope="col-2" style="border: 0.5px solid white;">Type</th>
+        <th scope="col-6" style="border: 0.5px solid white;">File</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Run a for loop here and iterate through all the index -->
+      {% for paper in task %}
+      
+      <tr>
+  
+        
+        <th style="border: 0.5px solid white;"  scope="row">{{forloop.counter}}</th>
+        <td style="border: 0.5px solid white;" >{{paper.subject}}</td>
+        <td style="border: 0.5px solid white;">{{paper.code}}</td>
+        <td style="border: 0.5px solid white;">{{paper.type}}</td>
+        <td style="border: 0.5px solid white;"> <a href="{{paper.paper.url}}" download >  {{paper.paper}} </a> </td>
+      </tr>
+
+      
+      
+      {% endfor %}
+      
+    </tbody>
+    
+    
+  </table>
+  
+  
+
+
+
+
+  
+</div>
+
+</div>
+
+
+
+ {% endblock %}
